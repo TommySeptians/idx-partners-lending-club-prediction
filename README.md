@@ -2,8 +2,6 @@
 
 Multifinance companies need to improve the accuracy of credit risk assessments to optimize business decisions and reduce losses. We developed a machine learning model using loan data from Lending Club (2007-2014) to predict credit risk, with a focus on business metrics such as losses and net profit margin. The aim of this data analysis is to identify patterns that indicate loans at potential risk, without strong assumptions, to support investment decision-making.
 
-The dataset used in this project is provided by **ID/X Partners**.
-
 ## Data Understanding
 
 The dataset consists of **466,285 rows** and **74 columns**. The columns can be categorized into:
