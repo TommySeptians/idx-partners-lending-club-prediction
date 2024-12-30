@@ -27,6 +27,7 @@ The dataset consists of **466,285 rows** and **74 columns**. The columns can be 
 
 The EDA focuses on uncovering patterns, correlations, and key insights from the dataset. Some of the key findings include:
 
+![Images2](Member_Percentage_by_Grade_and_Verification_Status.png)
 - **Verification Status and Loan Grades**:  
   - The **Verified** verification status shows an increase in loan percentage across grades A to G.
   - The **Not Verified** status shows a decrease in loan percentage from grade A to G.
