@@ -40,4 +40,54 @@ These insights are helpful in understanding how verification status relates to l
 
 ### Handling Missing Values:
 
-The data preparation steps include handling missing values and ensuring the dataset is ready for model tr
+The data preparation steps include handling missing values and ensuring the dataset is ready for model training. The following steps were taken:
+
+1. **Dropping Unnecessary Columns**:
+   - Dropped columns such as `id`, `member_id`, `url`, `policy_code`, and `application_type` because they either contained unique values or did not provide meaningful information.
+   
+2. **Handling Columns with High Missing Data**:
+   - Dropped columns with **more than 20% missing values** as they are not reliable for analysis.
+   
+3. **Handling Columns with Low Missing Data**:
+   - Removed rows with missing values in columns that had **less than 20% missing data** to ensure data integrity.
+
+### Handling Outliers:
+
+- Log transformation was applied to all columns that contained outliers in order to reduce the impact of extreme values and ensure a more normal distribution.
+
+### Label Encoding:
+
+- Label encoding was applied to all **categorical columns** to convert categorical data into numerical format, making it suitable for machine learning algorithms.
+
+After handling missing values, outliers, and performing label encoding, the dataset was reduced by **20.19%**, resulting in **372,161 rows** of data.
+
+## Feature Engineering
+
+### Feature Selection:
+- 13 columns that exhibited multicollinearity were removed to prevent overfitting and improve model performance.
+
+### Feature Transformation:
+- Log transformation was performed on columns that contained outliers.
+- The `loan_status` column was transformed to separate the status into three categories: **Failed to Pay**, **Successfully Paid**, and **Ongoing**.
+
+## Data Modeling
+
+### Class Imbalance:
+
+The `loan_status` label suffers from class imbalance, which could negatively affect model performance. Therefore, **SMOTE (Synthetic Minority Oversampling Technique)** was applied to balance the classes in the dataset.
+
+### Model Comparison:
+
+Two algorithms were used for modeling:
+
+- **Logistic Regression**: A classic linear model.
+- **XGBoost**: An advanced boosting algorithm that is known for its superior performance in many machine learning tasks.
+
+Both models were optimized using hyperparameters, and **XGBoost** outperformed **Logistic Regression** in terms of predictive accuracy.
+
+## How to Run
+
+To run the analysis and reproduce the results, you will need to have the following libraries installed:
+
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn xgboost imbalanced-learn
